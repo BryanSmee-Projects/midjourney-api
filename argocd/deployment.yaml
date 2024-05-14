@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: midjourney-api
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: midjourney-api
+  template:
+    metadata:
+      labels:
+        app: midjourney-api
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: midjourney-api
+          image: registry.k8s.smee.ovh/bryansmee-projects/midjourney-api:latest
+          args: ["-server"]
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: midjourney-keys
+          resources:
+            limits:
+              cpu: "0.2"
+              memory: "200Mi"

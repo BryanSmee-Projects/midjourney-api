@@ -69,6 +69,6 @@ jobs:
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git add argocd/deployment.yaml argocd/cronjob.yaml
+        git add argocd/deployment.yaml
         git commit -m "Update deployment image to new version"
         git push

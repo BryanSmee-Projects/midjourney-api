@@ -19,7 +19,6 @@ spec:
       containers:
         - name: midjourney-api
           image: registry.k8s.smee.ovh/bryansmee-projects/midjourney-api@sha256:6c4c6b7e720159a185e246d9be71ed8457bfd94be0ee9279ac8835123a1220ca
-          args: ["-server"]
           ports:
             - containerPort: 3000
           envFrom:

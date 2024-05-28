@@ -18,7 +18,7 @@ spec:
         - name: regcred
       containers:
         - name: midjourney-api
-          image: registry.k8s.smee.ovh/bryansmee-projects/midjourney-api@sha256:c8b6bc7923caabb7e0f488ed3e124997655a6d6959e1a03e64e30a603f462926
+          image: ghcr.io/bryansmee-projects/midjourney-api@sha256:67451dbb573eadb4165103699b8f8466abaa726878ff8b162291616ddc12b14d
           ports:
             - containerPort: 3000
           envFrom:
